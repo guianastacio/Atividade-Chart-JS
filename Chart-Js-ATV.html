@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHART JS</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body style="display: flex;">
+
+    <div>
+        <canvas id="myChart"  style="position: relative; height:40vh; width:40vw"></canvas>
+    </div>
+
+    <div>
+        <canvas id="myChart2"  style="position: relative; height:40vh; width:40vw"></canvas>
+    </div>
+
+</body>
+<script>
+
+// LINHA
+const labels = [
+'12:00',
+'13:00',
+'14:00',
+'15:00',
+'16:00',
+'17:00',
+];
+
+// ---------------------------------------
+
+
+// BARRA
+const labels2 = [
+'Janeiro',
+'Fevereiro',
+'Março',
+'Abril',
+'Maio',
+'Junho',
+];
+// ---------------------------------------
+
+
+// LINHA
+const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Temperatura',
+            backgroundColor: 'rgb(223, 67, 67)',
+            borderColor: 'rgb(223, 67, 67)',
+            data: [20 + 10 , 30 - 1 , 40 - 12 ,50 - 25 , 60 - 38 , 70 - 47 , 80 , 90],
+        },
+        {
+            label: 'Umidade',
+            backgroundColor: 'rgb(59, 59, 238)',
+            borderColor: 'rgb(59, 59, 238)',
+            data: [20 + 60 , 30 + 52 , 40 + 40 ,50 + 35 ,60 + 20 ,70 + 13 , 80 , 90],
+        }
+    
+    ]
+
+    };
+
+// ---------------------------------------
+
+
+    // BARRA
+const data2 = {
+        labels: labels2,
+        datasets: [{
+            label: 'Temperatura Média',
+            backgroundColor: 'rgb(223, 67, 67)',
+            borderColor: 'rgb(223, 67, 67)',
+            data: [0 + 22 ,10 + 14 , 20 + 7 , 30 - 7 , 40 - 20 ,50 - 32 , 60  , 70  , 80 , 90 , 100],
+        },
+        {
+            label: 'Umidade Média',
+            backgroundColor: 'rgb(59, 59, 238)',
+            borderColor: 'rgb(59, 59, 238)',
+            data: [0 + 90  ,10 + 79 ,20 + 73 , 30 + 57 , 40 + 48 ,50 + 32 ,60 ,70  , 80 , 90, 100],
+        }
+    
+    ]
+
+    };
+// ---------------------------------------
+
+
+
+// LINHA
+    const config = {
+        type: 'line',
+        data: data,
+        options: {}
+    };
+// ---------------------------------------
+
+
+// BARRA
+    const config2 = {
+        type: 'bar',
+        data: data2,
+        options: {}
+    };
+// ---------------------------------------
+
+</script>
+
+<script>
+// LINHA
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+// BARRA
+    const myChart2 = new Chart(
+        document.getElementById('myChart2'),
+        config2
+    );
+</script>
+</html>
